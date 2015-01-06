@@ -13,6 +13,16 @@ class RedmineIspAdminController < ApplicationController
     @service = RispService.new
   end
 
+  def create_service
+    service = RispService.new
+    service.name         = params[:name]
+    service.description  = params[:description]
+    service.measure_unit = params[:measure_unit]
+    service.save
+
+    redirect_to :action => 'index'
+  end
+
   def add_serivce_link
   end
 
