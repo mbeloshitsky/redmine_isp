@@ -5,6 +5,26 @@
 
 <h2>Services</h2>
 
-<% @services.each do |service| %>
-	<p><%= service.title %>, <%= service.description %>, , <%= service.measure_unit %></p>
-<% end %>
+
+<div class="autoscroll">
+<table class="list">
+  <thead><tr>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Measure unit</th>
+  <th></th> 
+  </tr></thead>
+  <tbody>
+	<% for service in @services -%>
+	  <tr class="<%= cycle("odd", "even") %>">
+	  <td class="servicename"><%= service.name %></td>
+	  <td class="servicedesc"><%= service.description %></td>
+	  <td class="servicemunit"><%= service.measure_unit %></td>
+	  <td class="buttons">
+	  ... 
+	  </td>
+	  </tr>
+	<% end -%>
+  </tbody>
+</table>
+</div>
