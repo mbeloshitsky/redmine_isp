@@ -10,6 +10,7 @@ class RedmineIspAdminController < ApplicationController
   end
 
   def add_service
+    @service = RispService.new
   end
 
   def add_serivce_link
