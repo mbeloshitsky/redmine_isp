@@ -1,0 +1,2 @@
+module RedmineIspAdminHelper
+end
