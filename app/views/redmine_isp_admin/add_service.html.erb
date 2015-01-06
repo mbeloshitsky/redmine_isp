@@ -1,6 +1,6 @@
 <h2><%=l(:label_service_new)%></h2>
 
-<%= labelled_form_for @service do |f| %>
+<%= form_for @service do |f| %>
   <%= render :partial => 'redmine_isp_admin/form', :locals => { :f => f } %>
   <%= submit_tag l(:button_create) %>
 <% end %>
