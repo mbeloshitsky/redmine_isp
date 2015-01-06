@@ -1,8 +1,12 @@
 class RedmineIspAdminController < ApplicationController
   unloadable
 
-
   def index
+    @services = RispService.all
+  end
+
+  def links
+    @links = RispProjectService.all
   end
 
   def add_service

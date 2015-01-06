@@ -2,6 +2,7 @@
 # See: http://guides.rubyonrails.org/routing.html
 
 get    	'isp', 							:to => 'redmine_isp_admin#index'
+get    	'isp/links', 					:to => 'redmine_isp_admin#links'
 
 post   	'isp/add',  					:to => 'redmine_isp_admin#add_service'
 put    	'isp/:id',  					:to => 'redmine_isp_admin#edit_service'

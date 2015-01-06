@@ -1,1 +1,10 @@
-<h2>RedmineIspAdminController#index</h2>
+<div class="contextual">
+<%= link_to l(:service__new), {:controller => 'redmine_isp_admin', :action => 'add_service'}, :class => 'icon icon-add' %>
+<%= link_to l(:service_links), {:controller => 'redmine_isp_admin', :action => 'links'}, :class => 'icon icon-summary' %>
+</div>
+
+<h2>Services</h2>
+
+<% @services.each do |service| %>
+	<p><%= service.title %>, <%= service.description %>, , <%= service.measure_unit %></p>
+<% end %>
