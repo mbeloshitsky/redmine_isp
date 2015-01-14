@@ -1,0 +1,26 @@
+<div class="contextual">
+<%= link_to 'New project service', new_risp_project_service_path, :class => "icon icon-add" %> | 
+<%= render :partial => 'shared/admin_menu' %>
+</div>
+
+<h1>Listing risp_project_services</h1>
+
+<table class="list">
+  <tr>
+    <th>Association</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @risp_project_services.each do |risp_project_service| %>
+  <tr>
+    <td><%= risp_project_service.title %></td>
+    <td><%= link_to 'Show', risp_project_service %></td>
+    <td><%= link_to 'Edit', edit_risp_project_service_path(risp_project_service) %></td>
+    <td><%= link_to 'Destroy', risp_project_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

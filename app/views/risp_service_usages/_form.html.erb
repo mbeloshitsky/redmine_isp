@@ -1,0 +1,25 @@
+<%= form_for(@risp_service_usage) do |f| %>
+  <% if @risp_service_usage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@risp_service_usage.errors.count, "error") %> prohibited this risp_service_usage from being saved:</h2>
+
+      <ul>
+      <% @risp_service_usage.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :project_service_id %><br />
+    <%= f.select :project_service_id, RispProjectService.all.collect {|ps| [ps.title, ps.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :usage %><br />
+    <%= f.number_field :usage %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

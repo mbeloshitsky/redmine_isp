@@ -1,0 +1,19 @@
+<h1>Service usage</h1>
+
+<table class="list">
+  <tr>
+    <th>Service</th>
+    <th>Created</th>
+    <th>Usage</th>
+  </tr>
+
+<% @usages.each do |usage| %>
+  <tr>
+    <td><%= @service_names[usage.project_service_id] %></td>
+    <td><%= usage.created_at %></td>
+    <td><%= usage.usage %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

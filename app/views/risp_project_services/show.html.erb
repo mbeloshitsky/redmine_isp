@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Project:</b>
+  <%= @risp_project_service.project_id %>
+</p>
+
+<p>
+  <b>Service:</b>
+  <%= @risp_project_service.service_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_risp_project_service_path(@risp_project_service) %> |
+<%= link_to 'Back', risp_project_services_path %>

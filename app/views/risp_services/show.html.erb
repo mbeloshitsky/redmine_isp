@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @risp_service.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @risp_service.description %>
+</p>
+
+<p>
+  <b>Munit:</b>
+  <%= @risp_service.munit %>
+</p>
+
+
+<%= link_to 'Edit', edit_risp_service_path(@risp_service) %> |
+<%= link_to 'Back', risp_services_path %>

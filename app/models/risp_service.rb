@@ -1,3 +1,3 @@
 class RispService < ActiveRecord::Base
-  unloadable
+  attr_accessible :description, :munit, :name
 end

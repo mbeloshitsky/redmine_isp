@@ -6,26 +6,26 @@ Redmine::Plugin.register :redmine_isp do
   url 'http://github.com/mbeloshitsky/redmine_isp'
   author_url 'http://mbeloshitsky.github.io'
 
-  # permission :redmine_isp, { :redmine_isp => [:index] }, :public => true
-  permission :view_isp_usage,      :redmine_isp_usage => [:index, :service]
-  permission :register_isp_usage,  :redmine_isp_usage => :register
-  permission :admin_isp_services,  :redmine_isp_admin => [
+  permission :view_isp_all_usage,      :risp_service_usages => [:index, :show]
+  permission :view_isp_own_usage,      :risp_project_usage => [:index]
+  permission :register_isp_usage,  :risp_service_usages => :create
+  permission :admin_isp_services,  :risp_services => [
   		:index, 
-  		:add_service, 
-  		:edit_service, 
-  		:del_service
+  		:show, 
+  		:create, 
+  		:delete
   	]
-  permission :assign_isp_services, :redmine_isp_admin => [
+  permission :assign_isp_services, :risp_project_services => [
   		:index, 
-  		:add_service_link, 
-  		:edit_service_link, 
-  		:del_service_link
+  		:show, 
+  		:create, 
+  		:delete
   	]
 
-  menu :admin_menu, :redmine_isp, 
-  	{ :controller => 'redmine_isp_admin', :action => 'index' }, 
+  menu :admin_menu, :risp_services, 
+  	{ :controller => 'risp_services', :action => 'index' }, 
   	:caption => 'ISP'
-  menu :project_menu, :redmine_isp, 
-  	{ :controller => 'redmine_isp_usage', :action => 'index' }, 
-  	:caption => 'Services', :after => :activity, :param => :project_id
+  menu :project_menu, :risp_project_usage, 
+  	{ :controller => 'risp_project_usage', :action => 'index' }, 
+  	:caption => 'Services', :after => :activity
 end
